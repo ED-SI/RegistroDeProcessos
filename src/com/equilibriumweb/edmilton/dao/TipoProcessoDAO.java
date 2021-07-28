@@ -6,13 +6,13 @@ import com.equilibriumweb.edmilton.model.TipoProcesso;
 
 public interface TipoProcessoDAO {
 
-	public int salvar(TipoProcesso tipoProcesso);
+	public int save(TipoProcesso tipoProcesso);
 	
 	public TipoProcesso get(int id);
 	
 	public List<TipoProcesso> tipoProcesso();
 	
-	public int atualizar(TipoProcesso tipoProcesso);
+	public int update(TipoProcesso tipoProcesso);
 	
-	public int deletar(int id);
+	public int delete(int id);
 }

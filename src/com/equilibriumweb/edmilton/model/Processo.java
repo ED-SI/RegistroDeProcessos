@@ -3,35 +3,36 @@ import java.util.Date;
 
 public class Processo {
 
-	private int id_processo;
-	private int numero_processo;
+	private int idProcesso;
+	private int numero;
 	private Date data;
-	private double valor_recurso;
+	private double valorRecurso;
 	private String objetivo;
+	private TipoProcesso tipoProcesso;
 
-	public Processo(int id_processo, int numero_processo, Date data, double valor_recurso, String objetivo) {
+	public Processo(int idProcesso, int numero, Date data, double valorRecurso, String objetivo) {
 		super();
-		this.id_processo = id_processo;
-		this.numero_processo = numero_processo;
+		this.idProcesso = idProcesso;
+		this.numero = numero;
 		this.data = data;
-		this.valor_recurso = valor_recurso;
+		this.valorRecurso = valorRecurso;
 		this.objetivo = objetivo;
 	}
 
-	public int getId_processo() {
-		return id_processo;
+	public int getIdProcesso() {
+		return idProcesso;
 	}
 
-	public void setId_processo(int id_processo) {
-		this.id_processo = id_processo;
+	public void setIdProcesso(int idProcesso) {
+		this.idProcesso = idProcesso;
 	}
 
-	public int getNumero_processo() {
-		return numero_processo;
+	public int getNumero() {
+		return numero;
 	}
 
-	public void setNumero_processo(int numero_processo) {
-		this.numero_processo = numero_processo;
+	public void setNumero(int numero_processo) {
+		this.numero = numero;
 	}
 
 	public Date getData() {
@@ -42,12 +43,12 @@ public class Processo {
 		this.data = data;
 	}
 
-	public double getValor_recurso() {
-		return valor_recurso;
+	public double getValorRecurso() {
+		return valorRecurso;
 	}
 
-	public void setValor_recurso(double valor_recurso) {
-		this.valor_recurso = valor_recurso;
+	public void setValorRecurso(double valorRecurso) {
+		this.valorRecurso = valorRecurso;
 	}
 
 	public String getObjetivo() {
@@ -57,6 +58,12 @@ public class Processo {
 	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
 	}
-	
-	
+
+	public TipoProcesso getTipoProcesso() {
+		return tipoProcesso;
+	}
+
+	public void setTipoProcesso_id(TipoProcesso tipoProcesso) {
+		this.tipoProcesso = tipoProcesso;
+	}
 }
