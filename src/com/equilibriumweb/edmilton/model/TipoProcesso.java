@@ -29,4 +29,12 @@ public class TipoProcesso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	@Override
+	public String toString() {
+		return "TipoProcesso{" +
+				"idTipoProcesso=" + idTipoProcesso +
+				", nome='" + nome + '\'' +
+				'}';
+	}
 }

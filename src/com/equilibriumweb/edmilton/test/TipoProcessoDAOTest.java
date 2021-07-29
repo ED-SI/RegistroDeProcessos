@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,17 +39,13 @@ class TipoProcessoDAOTest {
     }
 
     @Test
-    void get() {
+    void testGet() {
         Integer id = 1;
         TipoProcesso tipoProcesso = dao.get(id);
         if(tipoProcesso != null){
             System.out.println(tipoProcesso);
         }
         assertNotNull(tipoProcesso);
-    }
-
-    @Test
-    void tipoProcesso() {
     }
 
     @Test
@@ -60,6 +58,20 @@ class TipoProcessoDAOTest {
     }
 
     @Test
-    void delete() {
+    void testDelete() {
+        Integer id = 5;
+        int resultado = dao.delete(id);
+
+        assertTrue(resultado > 0);
+    }
+
+    @Test
+    void testList() {
+        List<TipoProcesso> listTipoProcessos = dao.list();
+
+        for(TipoProcesso tipoProcesso : listTipoProcessos){
+            System.out.println(tipoProcesso);
+        }
+        assertTrue(!listTipoProcessos.isEmpty());
     }
 }

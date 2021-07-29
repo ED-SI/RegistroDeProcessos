@@ -4,6 +4,7 @@ import com.equilibriumweb.edmilton.model.TipoProcesso;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -43,11 +44,6 @@ public class TipoProcessoDAOImpl implements TipoProcessoDAO {
     }
 
     @Override
-    public List<TipoProcesso> tipoProcesso() {
-        return null;
-    }
-
-    @Override
     public int update(TipoProcesso tipo) {
         String sql = "UPDATE tipo_processo SET nome = ? WHERE id_tipo_processo = ?";
         return jdbcTemplate.update(sql,tipo.getNome());
@@ -55,6 +51,23 @@ public class TipoProcessoDAOImpl implements TipoProcessoDAO {
 
     @Override
     public int delete(int id) {
-        return 0;
+        String sql = "DELETE FROM tipo_processo WHERE id_tipo_processo = " + id;
+        return jdbcTemplate.update(sql);
+    }
+
+    @Override
+    public List<TipoProcesso> list(){
+        String sql = "SELECT * FROM tipo_processo";
+
+        RowMapper<TipoProcesso> romMapper = new RowMapper<TipoProcesso>() {
+            @Override
+            public TipoProcesso mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Integer id = rs.getInt("id_tipo_processo");
+                String nome = rs.getString("nome");
+
+                return new TipoProcesso(id, nome);
+            }
+        };
+        return jdbcTemplate.query(sql, romMapper);
     }
 }

@@ -10,7 +10,7 @@ public interface TipoProcessoDAO {
 
 	public TipoProcesso get(Integer id);
 
-	public List<TipoProcesso> tipoProcesso();
+	public List<TipoProcesso> list();
 	
 	public int update(TipoProcesso tipoProcesso);
 	
