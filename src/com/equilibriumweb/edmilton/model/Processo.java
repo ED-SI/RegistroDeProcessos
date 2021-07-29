@@ -1,20 +1,29 @@
 package com.equilibriumweb.edmilton.model;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Processo {
 
 	private int idProcesso;
 	private int numero;
-	private Date data;
+	private Calendar data;
 	private double valorRecurso;
 	private String objetivo;
 	private TipoProcesso tipoProcesso;
 
-	public Processo(int idProcesso, int numero, Date data, double valorRecurso, String objetivo) {
+	public Processo(int id, int numero, double valorRecurso, String objetivo) {
 		super();
-		this.idProcesso = idProcesso;
+		this.idProcesso = id;
 		this.numero = numero;
-		this.data = data;
+		this.data = Calendar.getInstance();
+		this.valorRecurso = valorRecurso;
+		this.objetivo = objetivo;
+	}
+
+	public Processo(int numero, double valorRecurso, String objetivo) {
+		super();
+		this.numero = numero;
+		this.data = Calendar.getInstance();
 		this.valorRecurso = valorRecurso;
 		this.objetivo = objetivo;
 	}
@@ -35,11 +44,11 @@ public class Processo {
 		this.numero = numero;
 	}
 
-	public Date getData() {
+	public Calendar getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(Calendar data) {
 		this.data = data;
 	}
 
@@ -65,5 +74,17 @@ public class Processo {
 
 	public void setTipoProcesso_id(TipoProcesso tipoProcesso) {
 		this.tipoProcesso = tipoProcesso;
+	}
+
+	@Override
+	public String toString() {
+		return "Processo{" +
+				"idProcesso=" + idProcesso +
+				", numero=" + numero +
+				", data=" + data +
+				", valorRecurso=" + valorRecurso +
+				", objetivo='" + objetivo + '\'' +
+				", tipoProcesso=" + tipoProcesso +
+				'}';
 	}
 }
