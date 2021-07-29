@@ -7,9 +7,9 @@ import com.equilibriumweb.edmilton.model.TipoProcesso;
 public interface TipoProcessoDAO {
 
 	public int save(TipoProcesso tipoProcesso);
-	
-	public TipoProcesso get(int id);
-	
+
+	public TipoProcesso get(Integer id);
+
 	public List<TipoProcesso> tipoProcesso();
 	
 	public int update(TipoProcesso tipoProcesso);

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TipoProcessoDAOTest {
@@ -27,7 +28,7 @@ class TipoProcessoDAOTest {
 
     @Test
      void testSave() {
-        TipoProcesso tipo = new TipoProcesso("Tipo 2");
+        TipoProcesso tipo = new TipoProcesso("Tipo2");
 
         int resultado = dao.save(tipo);
 
@@ -37,6 +38,12 @@ class TipoProcessoDAOTest {
 
     @Test
     void get() {
+        Integer id = 1;
+        TipoProcesso tipoProcesso = dao.get(id);
+        if(tipoProcesso != null){
+            System.out.println(tipoProcesso);
+        }
+        assertNotNull(tipoProcesso);
     }
 
     @Test
