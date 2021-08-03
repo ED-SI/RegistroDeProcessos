@@ -11,8 +11,8 @@ public interface TipoProcessoDAO {
 	public TipoProcesso get(Integer id);
 
 	public List<TipoProcesso> list();
-	
-	public int update(TipoProcesso tipoProcesso);
-	
+
 	public int delete(int id);
+
+	public int update(TipoProcesso tipo);
 }

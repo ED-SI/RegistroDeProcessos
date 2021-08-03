@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface ProcessoDAO {
 
-    public int save(Processo processo);
+    public static int save(Processo processo);
 
-    public Processo get(Integer id);
+    public static Processo get(Integer id);
 
     public List<Processo> list();
 
-    public int update(Processo processo);
+    public static int delete(int id);
 
-    public int delete(int id);
+    public int update(Processo processo);
 }
